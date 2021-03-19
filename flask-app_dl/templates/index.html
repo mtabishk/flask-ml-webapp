@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Diabetes Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<body>
+ <div class="login">
+	<h1>Predict whether the patient has diabetes </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	 
+    	<input type="number" step="any"  name="no_pregnent" placeholder="Number of times pregnant" required="required" />
+    	<input type="number" step="any"   name="plasma_glucose_conc" placeholder="Plasma glucose concentration a 2 hours in an oral glucose tolerance test" required="required" />
+    	<input type="number" step="any"   name="diastolic_bp" placeholder="Diastolic blood pressure (mm Hg)" required="required" />
+    	<input type="number" step="any"   name="triceps_skinfold_thickness" placeholder="Triceps skin fold thickness (mm)" required="required" />
+    	<input type="number" step="any"   name="serum_insulin" placeholder=" 2-Hour serum insulin (mu U/ml)" required="required" />
+    	<input type="number" step="any"   name="bmi" placeholder="Body mass index (weight in kg/(height in m)^2)" required="required" />
+    	<input type="number" step="any"   name="diabetes_pedigree_fn" placeholder="Diabetes pedigree function" required="required" />
+    	<input type="number" step="any"   name="age" placeholder="Age (years)" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+ </div>
+</body>
+</html>
