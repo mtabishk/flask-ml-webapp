@@ -16,5 +16,6 @@ RUN pip3 install jsonify==0.5
 
 ADD  . /deep-learning-app/ 
 
-ENTRYPOINT ["python3", "app.py"]
+CMD ["python3", "app.py"]
 
+EXPOSE 8080

@@ -24,9 +24,9 @@ def predict():
 	output = model.predict( [[no_pregnant, plasma_glucose_conc, diastolic_bp, triceps_skinfold_thickness, serum_insulin, bmi, diabetes_pedigree_fn, age
 ] ])
 	if str(round(output[0][0])) == '0':
-		prediction_text = 'Dead'
+		prediction_text = 'Negative'
 	else:
-		prediction_text	= 'Alive'
+		prediction_text	= 'Positive'
 
 	return  render_template("result.html", prediction_text= prediction_text )
  
@@ -45,9 +45,9 @@ def predict_api():
         output = model.predict( [[no_pregnant, plasma_glucose_conc, diastolic_bp, triceps_skinfold_thickness, serum_insulin, bmi, diabetes_pedigree_fn, age
 ] ])
         if str(round(output[0][0])) == '0':
-                prediction_text = 'Dead'
+                prediction_text = 'Negative'
         else:
-                prediction_text = 'Alive'
+                prediction_text = 'Positive'
     
         output = {"status": f"{prediction_text}"}
         return  json.dumps(output)
